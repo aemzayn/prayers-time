@@ -1,20 +1,19 @@
-document.getElementById("getCityName").addEventListener("click", getPrayerTime)
+document.getElementById("getCityName").addEventListener("click", getPrayerTime);
 
-const shubuh = document.getElementById("shubuh");
-const dzuhur = document.getElementById("dzuhur");
-const ashar = document.getElementById("ashar");
-const maghrib = document.getElementById("maghrib");
-const isya = document.getElementById("isya");
-const city = document.getElementById("city");
 
-window.onload = start();
 
-function start() {
+window.onload = () => {
     getDate();
     getTime();
-}
+};
 
 function getPrayerTime(e) {
+    const shubuh = document.getElementById("shubuh");
+    const dzuhur = document.getElementById("dzuhur");
+    const ashar = document.getElementById("ashar");
+    const maghrib = document.getElementById("maghrib");
+    const isya = document.getElementById("isya");
+    const city = document.getElementById("city");
     var cityName = document.getElementById("cityName").value;
 
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -36,8 +35,8 @@ function getPrayerTime(e) {
                 ashar.innerHTML = asharTime;
                 maghrib.innerHTML = maghribTime;
                 isya.innerHTML = isyaTime;
-            } else if (shubuhTime === undefined) {
-                city.innerHTML = "Belum masukin kota lu"
+            } else if (shubuhTime.length == 0) {
+                city.innerHTML = "You haven't entered a city name.";
             }
         })
         .catch(err => console.log(err))
