@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -16,14 +14,33 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script type="module" src="js/script.js" defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        .time-and-date {
+            text-align: right;
+            margin: auto 0;
+        }
+
+        #time,
+        #date {
+            display: block;
+            margin: auto 0;
+        }
+    </style>
     <title>Prayers Time API</title>
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1 class="display-4">Prayer Time</h1>
+    <div class="header container mt-5 d-flex justify-content-between align-items-center">
+        <h1 class="display-4 title">Prayer Time</h1>
+        <div class="time-and-date">
+            <p id="time">00:00</p>
+            <p id="date">1-1-2020</p>
+        </div>
+
     </div>
-    <div class="container my-2">
+    <div class="container">
         <form action="/" method="POST">
             <div class="form-group">
                 <label for="cityName">City Name</label>
